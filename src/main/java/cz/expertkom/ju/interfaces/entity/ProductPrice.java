@@ -4,9 +4,9 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class ProductPrice implements Serializable{
+public class ProductPrice /*implements Serializable*/{
 
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	/*název výrobku */
 	private String name;
@@ -14,6 +14,7 @@ public class ProductPrice implements Serializable{
 	private String priceWithVAT;
 	/*cena bez DPH */
 	private String priceWithoutVAT;
+	
 	public String getName() {
 		return name;
 	}
@@ -23,8 +24,8 @@ public class ProductPrice implements Serializable{
 	public String getPriceVAT() {
 		return priceWithVAT;
 	}
-	public void setPriceVAT(String priceVAT) {
-		this.priceWithVAT = priceVAT;
+	public void setPriceWithVAT(String priceWithVAT) {
+		this.priceWithVAT = priceWithVAT;
 	}
 	public String getPriceWithoutVAT() {
 		return priceWithoutVAT;
@@ -33,6 +34,10 @@ public class ProductPrice implements Serializable{
 		this.priceWithoutVAT = priceWithoutVAT;
 	}
 	
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", PriceWithVAT=" + priceWithVAT+ ", priceWithoutVAT= " + priceWithoutVAT+ "]";
+	}
 	
 	
 
